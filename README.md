@@ -10,8 +10,10 @@ TODO: Enter the cookbook description here.
 
 - kitchen test (does all of the above)
 
-# to run spec test:
+# to run spec unit test:
 - chef exec rspec
+# to run integration test:
+- kitchen verify
 
 # update chef
 - chef update

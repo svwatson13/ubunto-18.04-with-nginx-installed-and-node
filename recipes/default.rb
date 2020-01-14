@@ -5,18 +5,20 @@
 # Copyright:: 2020, The Authors, All Rights Reserved.
 
 # imports
-include_recipe 'nodejs'
 include_recipe 'apt'
-
-# npm installs
-nodejs_npm 'pm2'
+include_recipe 'nodejs'
 
 # packages apt-get
 apt_update
 package 'nginx'
+package 'npm'
 
 # services
 service 'nginx' do
-#  supports status: true, restart: true, reload: true
+  supports status: true, restart: true, reload: true
   action [:enable, :start]
 end
+
+
+# npm installs
+nodejs_npm 'pm2'
