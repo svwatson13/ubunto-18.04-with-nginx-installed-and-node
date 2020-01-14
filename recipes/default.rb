@@ -13,12 +13,11 @@ apt_update
 package 'nginx'
 package 'npm'
 
+# npm installs
+nodejs_npm 'pm2'
+
 # services
 service 'nginx' do
   supports status: true, restart: true, reload: true
   action [:enable, :start]
 end
-
-
-# npm installs
-nodejs_npm 'pm2'
